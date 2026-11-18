@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build DOS with Watcom",
+      "type": "process",
+      "command": "C:\\watcom\\binnt64\\wcl.exe",
+      "args": [
+        "-bt=dos",
+        "-ms",
+        "-q",
+        "-4",
+        "-ox",
+        "-d2",
+        "${fileBasename}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}",
+        "env": {
+          "WATCOM": "C:\\WATCOM",
+          "PATH": "C:\\WATCOM\\BINNT64;C:\\WATCOM\\BINNT;${env:PATH}",
+          "INCLUDE": "C:\\WATCOM\\H;C:\\WATCOM\\H\\NT;C:\\WATCOM\\H\\NT\\DIRECTX;C:\\WATCOM\\H\\NT\\DDK;${env:INCLUDE}",
+          "EDPATH": "C:\\WATCOM\\EDDAT",
+          "WIPFC": "C:\\WATCOM\\WIPFC"
+        }
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
